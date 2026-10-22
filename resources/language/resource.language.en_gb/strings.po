@@ -1,0 +1,61 @@
+# Kodi Media Center language file
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: en_GB\n"
+
+msgctxt "#32000"
+msgid "Disks & Devices"
+msgstr ""
+
+msgctxt "#32001"
+msgid "disc-launcher is not running (its daemon cannot be reached)."
+msgstr ""
+
+msgctxt "#32002"
+msgid "Kodi also reacts to discs by itself: [B]{0}[/B].[CR][CR]disc-launcher already offers its actions on insertion; both would react at the same time. Turn this off in Kodi?"
+msgstr ""
+
+msgctxt "#32003"
+msgid "Turn off"
+msgstr ""
+
+msgctxt "#32004"
+msgid "Keep"
+msgstr ""
+
+msgctxt "#32005"
+msgid "Play"
+msgstr ""
+
+msgctxt "#32006"
+msgid "Open the folder"
+msgstr ""
+
+msgctxt "#32007"
+msgid "Close"
+msgstr ""
+
+msgctxt "#32008"
+msgid "Done: {0}"
+msgstr ""
+
+msgctxt "#32009"
+msgid "Connected to disc-launcher"
+msgstr ""
+
+msgctxt "#32010"
+msgid "automatic DVD playback"
+msgstr ""
+
+msgctxt "#32011"
+msgid "action on audio CD insertion"
+msgstr ""
+
+msgctxt "#32012"
+msgid "Kodi settings updated"
+msgstr ""
+
+msgctxt "#32013"
+msgid "Back"
+msgstr ""
