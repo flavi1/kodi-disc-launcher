@@ -3,7 +3,7 @@
 
 Le démon envoie le même état que pour sa fenêtre du bureau :
 ``{visible, raise, title, empty, items: [{id, icon, title, lines, progress, actions, idle}]}``.
-Ici : une liste des éléments (sautée s'il n'y en a qu'un d'actif), puis la
+Ici : une liste des éléments (sautée s'il n'y en a qu'un seul), puis la
 liste de ses actions. Les tâches en cours (dump, encodage…) ont aussi une
 barre de progression discrète (DialogProgressBG).
 
@@ -188,7 +188,9 @@ class Panel(object):
             d.select(st.get("title", L(32000)), [st.get("empty", "")])
             return ("back",)
         active = [i for i in items if not i.get("idle")]
-        direct = len(active) == 1 or len(items) == 1
+        # Un seul élément : ses actions directement. Sinon la liste complète,
+        # lecteurs vides compris (« Ouvrir / Fermer le plateau »).
+        direct = len(items) == 1
         while True:
             if direct:
                 item = active[0] if active else items[0]

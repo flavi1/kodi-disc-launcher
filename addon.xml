@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="service.disc-launcher" name="disc-launcher" version="0.1.0" provider-name="flavi1">
+<addon id="service.disc-launcher" name="disc-launcher" version="0.1.1" provider-name="flavi1">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
   </requires>
@@ -16,7 +16,7 @@
     <license>GPL-3.0-or-later</license>
     <source>https://github.com/flavi1/kodi-disc-launcher</source>
     <website>https://github.com/flavi1/disc-launcher</website>
-    <news>0.1.0 : première version</news>
+    <news>0.1.1 : liste complète dès qu'il y a plus d'un élément (lecteur au plateau ouvert accessible). 0.1.0 : première version</news>
     <assets>
       <icon>resources/icon.png</icon>
     </assets>

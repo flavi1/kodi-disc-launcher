@@ -38,8 +38,16 @@ class PanelTests(unittest.TestCase):
         self.sent = []
         self.panel = Panel(self.sent.append, lambda m, c: None, video_playing=lambda: False)
 
-    def test_single_active_item_goes_straight_to_its_actions(self):
-        self.panel.on_state(state([SR0, SR1_IDLE]))
+    def test_idle_drive_stays_reachable(self):
+        """Clé USB + lecteur au plateau ouvert : la liste complète, pour pouvoir le refermer."""
+        tray = dict(SR1_IDLE, title="Lecteur optique (sr1) — plateau ouvert", actions=[["close-tray", "Fermer le plateau"]])
+        self.panel.on_state(state([tray, USB]))
+        Dialog.answers = [0, 0]
+        self.assertEqual(self.panel.show_once(), ("action", "/dev/sr1", "close-tray"))
+        self.assertEqual(Dialog.log[0][1][1], ["Lecteur optique (sr1) — plateau ouvert", "Volume USB — MA CLE"])
+
+    def test_single_item_goes_straight_to_its_actions(self):
+        self.panel.on_state(state([SR0]))
         self.assertTrue(self.panel.want_panel())
         Dialog.answers = [1]
         self.assertEqual(self.panel.show_once(), ("action", "/dev/sr0", "encode-disc"))
@@ -50,7 +58,7 @@ class PanelTests(unittest.TestCase):
         self.assertEqual(self.sent, [{"type": "action", "id": "/dev/sr0", "key": "encode-disc"}])
         # Pas de réouverture immédiate : on attend l'état suivant du démon.
         self.assertFalse(self.panel.want_panel())
-        self.panel.on_state(state([SR0, SR1_IDLE], raise_=False))
+        self.panel.on_state(state([SR0], raise_=False))
         self.assertTrue(self.panel.want_panel())
 
     def test_several_items_then_back(self):
