@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="service.disc-launcher" name="disc-launcher" version="0.1.0" provider-name="flavi1">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+  </requires>
+  <extension point="xbmc.service" library="service.py" start="login"/>
+  <extension point="xbmc.python.script" library="default.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="fr_FR">Disques, cartouches, clés USB et vinyles dans Kodi, avec disc-launcher</summary>
+    <summary lang="en_GB">Discs, cartridges, USB drives and vinyl in Kodi, with disc-launcher</summary>
+    <description lang="fr_FR">Interface Kodi de disc-launcher : à l'insertion d'un disque (CD audio, DVD, Blu-ray, jeu), d'une cartouche, d'une clé USB ou au branchement d'une platine vinyle, les actions de disc-launcher s'affichent dans Kodi : lire, encoder avec encbd, dumper, écouter et encoder un vinyle avec vinylrip… La lecture, l'écoute et la bibliothèque passent par Kodi. Remplace script.disc.import et vinylrip-kodi. Aucun réglage dans Kodi : tout est dans la configuration de disc-launcher.</description>
+    <description lang="en_GB">Kodi front-end for disc-launcher: when a disc (audio CD, DVD, Blu-ray, game), a cartridge or a USB drive is inserted, or a turntable is plugged in, disc-launcher's actions show up in Kodi: play, encode with encbd, dump, listen to and encode a vinyl record with vinylrip… Playback, listening and the library go through Kodi. Replaces script.disc.import and vinylrip-kodi. No settings in Kodi: everything is in disc-launcher's configuration.</description>
+    <platform>linux</platform>
+    <license>GPL-3.0-or-later</license>
+    <source>https://github.com/flavi1/kodi-disc-launcher</source>
+    <website>https://github.com/flavi1/disc-launcher</website>
+    <news>0.1.0 : première version</news>
+    <assets>
+      <icon>resources/icon.png</icon>
+    </assets>
+  </extension>
+</addon>
